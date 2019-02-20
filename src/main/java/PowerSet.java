@@ -28,7 +28,8 @@ public class PowerSet
      */
     public static void powerSetImplementation1(int[] S) throws NullPointerException
     {
-        if(S == null) {
+        if(S == null) 
+        {
         	throw new NullPointerException();
         }
     	// N stores total number of subsets
@@ -41,7 +42,8 @@ public class PowerSet
             String subset = "";
 
             // check every bit of i
-            for (int j = 0; j < S.length; j++) {
+            for (int j = 0; j < S.length; j++) 
+            {
                 // if j'th bit of i is set, append S[j] to subset
                 if ((i & (1 << j)) != 0) {
                     subset += (S[j]) + " ";
@@ -62,7 +64,8 @@ public class PowerSet
      */
     private static void printElements(Set<String> set) 
     {
-    	for (String subset: set) {
+    	for (String subset: set) 
+    	{
             System.out.print("[ " + subset + "] ");
         }
     }
@@ -100,7 +103,9 @@ public class PowerSet
        if (pos <= nums.length) 
        {
            res.add(each);
-       }else {
+       }
+       else 
+       {
     	   // do nothing
        }
        int i = pos;
