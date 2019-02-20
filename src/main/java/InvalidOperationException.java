@@ -3,7 +3,6 @@ package main.java;
 /**
  * class for matrix positions
  */
-import java.lang.*;  // for class Exception
 
 public class InvalidOperationException extends RuntimeException {
 
