@@ -26,25 +26,25 @@ public class PowerSet
      * @exception NullPointerException if <code>S</code> 
      * is not initialized
      */
-    public static void powerSetImplementation1(int[] S) throws NullPointerException
+    public static void powerSetImplementation1(int[] s) throws NullPointerException
     {
-        if(S == null) {
+        if(s == null){
         	throw new NullPointerException();
         }
     	// N stores total number of subsets
-        int N = (int)Math.pow(2, S.length);
+        int n = (int)Math.pow(2, s.length);
         Set<String> set = new HashSet<>();
 
         // generate each subset one by one
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < n; i++)
         {
             String subset = "";
 
             // check every bit of i
-            for (int j = 0; j < S.length; j++) {
+            for (int j = 0; j < s.length; j++){
                 // if j'th bit of i is set, append S[j] to subset
                 if ((i & (1 << j)) != 0) {
-                    subset += (S[j]) + " ";
+                    subset += (s[j]) + " ";
                 }
             }
 
@@ -62,7 +62,7 @@ public class PowerSet
      */
     private static void printElements(Set<String> set) 
     {
-    	for (String subset: set) {
+    	for (String subset: set){
             System.out.print("[ " + subset + "] ");
         }
     }
@@ -100,7 +100,7 @@ public class PowerSet
        if (pos <= nums.length) 
        {
            res.add(each);
-       }else {
+       }else{
     	   // do nothing
        }
        int i = pos;
@@ -123,16 +123,16 @@ public class PowerSet
      * is not initialized
      */
     // implementation 3
-        public static Set<Set<Integer>> powerSetImplementation3(int[] S) 
+        public static Set<Set<Integer>> powerSetImplementation3(int[] s) 
         {
-        	if(S == null) 
+        	if(s == null) 
         	{
         		return new HashSet<Set<Integer>>();
         	}
             List<Integer> arrayList = new ArrayList<Integer>();
-            for (int index = 0; index < S.length; index++)
+            for (int index = 0; index < s.length; index++)
             {
-                arrayList.add(S[index]);
+                arrayList.add(s[index]);
             }
             Set<Set<Integer>> ps = new HashSet<Set<Integer>>();
               ps.add(new HashSet<Integer>());   // add the empty set
